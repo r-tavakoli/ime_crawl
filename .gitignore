@@ -6,6 +6,9 @@ __pycache__/
 # C extensions
 *.so
 
+# dont ignore these direcotries
+!ime_crawl/logs
+
 # Distribution / packaging
 .Python
 build/
