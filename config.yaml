@@ -1,0 +1,9 @@
+export_method: MS-Excel
+first_time_read:
+  from_date: 1403/01/01
+  state: inactive
+  step_days: 10
+  to_date: 1403/03/31
+last_read_date: 1403/08/09
+output_path: c:\test
+show_browser: false
