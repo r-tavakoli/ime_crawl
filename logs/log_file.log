@@ -1,0 +1,647 @@
+2024-11-15T12:25:29.725799+0330 __main__ ERROR 'Scrape' object has no attribute 'export_list'
+Traceback (most recent call last):
+
+> File "H:\projects\ime_crawl\main.py", line 138, in <module>
+    scrape = Scrape(config_file_path='config.yaml')
+             └ <class '__main__.Scrape'>
+
+  File "H:\projects\ime_crawl\main.py", line 52, in __init__
+    self.get_preparation_elements()
+    │    └ <function Scrape.get_preparation_elements at 0x000002DCF3E67380>
+    └ <__main__.Scrape object at 0x000002DCF3B8DE90>
+
+  File "H:\projects\ime_crawl\main.py", line 94, in get_preparation_elements
+    self.export_modes =self.export_list.find_elements(By.TAG_NAME, 'a')
+    │                  │                              │  └ 'tag name'
+    │                  │                              └ <class 'selenium.webdriver.common.by.By'>
+    │                  └ <__main__.Scrape object at 0x000002DCF3B8DE90>
+    └ <__main__.Scrape object at 0x000002DCF3B8DE90>
+
+AttributeError: 'Scrape' object has no attribute 'export_list'
+2024-11-15T12:27:13.425363+0330 __main__ ERROR Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=130.0.6723.119); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF7448F38A5+3004357]
+	(No symbol) [0x00007FF744589970]
+	(No symbol) [0x00007FF74443582A]
+	(No symbol) [0x00007FF74443C2E2]
+	(No symbol) [0x00007FF74443E637]
+	(No symbol) [0x00007FF74443E6F0]
+	(No symbol) [0x00007FF74447FB2B]
+	(No symbol) [0x00007FF7444ABBDA]
+	(No symbol) [0x00007FF7444792A6]
+	(No symbol) [0x00007FF7444ABDF0]
+	(No symbol) [0x00007FF7444CBA4C]
+	(No symbol) [0x00007FF7444AB983]
+	(No symbol) [0x00007FF744477628]
+	(No symbol) [0x00007FF744478791]
+	GetHandleVerifier [0x00007FF74491A00D+3161901]
+	GetHandleVerifier [0x00007FF74496E060+3506048]
+	GetHandleVerifier [0x00007FF74496400D+3465005]
+	GetHandleVerifier [0x00007FF7446E0EEB+830987]
+	(No symbol) [0x00007FF74459467F]
+	(No symbol) [0x00007FF7445909D4]
+	(No symbol) [0x00007FF744590B6D]
+	(No symbol) [0x00007FF744580149]
+	BaseThreadInitThunk [0x00007FFD11FA257D+29]
+	RtlUserThreadStart [0x00007FFD1340AF08+40]
+
+Traceback (most recent call last):
+
+> File "H:\projects\ime_crawl\main.py", line 139, in <module>
+    scrape.scrape_incremental()
+    │      └ <function Scrape.scrape_incremental at 0x000001DB2C5C74C0>
+    └ <__main__.Scrape object at 0x000001DB2C5E5090>
+
+  File "H:\projects\ime_crawl\main.py", line 122, in scrape_incremental
+    if e.text == self.selected_export_mode:
+       │ │       │    └ 'MS-Excel'
+       │ │       └ <__main__.Scrape object at 0x000001DB2C5E5090>
+       │ └ <property object at 0x000001DB2C146930>
+       └ <selenium.webdriver.remote.webelement.WebElement (session="b8e3809e3bea534b0ae4015122f0b84b", element="f.F72161958945BABD666A...
+
+  File "H:\projects\ime_crawl\venv\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 90, in text
+    return self._execute(Command.GET_ELEMENT_TEXT)["value"]
+           │    │        │       └ 'getElementText'
+           │    │        └ <class 'selenium.webdriver.remote.command.Command'>
+           │    └ <function WebElement._execute at 0x000001DB2C137D80>
+           └ <selenium.webdriver.remote.webelement.WebElement (session="b8e3809e3bea534b0ae4015122f0b84b", element="f.F72161958945BABD666A...
+  File "H:\projects\ime_crawl\venv\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 395, in _execute
+    return self._parent.execute(command, params)
+           │    │       │       │        └ {'id': 'f.F72161958945BABD666A1A3CE5E8E5D5.d.94BE7105972B2A3F9A255C60ABA1F440.e.340'}
+           │    │       │       └ 'getElementText'
+           │    │       └ <function WebDriver.execute at 0x000001DB2C1C9120>
+           │    └ <selenium.webdriver.chrome.webdriver.WebDriver (session="b8e3809e3bea534b0ae4015122f0b84b")>
+           └ <selenium.webdriver.remote.webelement.WebElement (session="b8e3809e3bea534b0ae4015122f0b84b", element="f.F72161958945BABD666A...
+  File "H:\projects\ime_crawl\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 380, in execute
+    self.error_handler.check_response(response)
+    │    │             │              └ {'status': 404, 'value': '{"value":{"error":"stale element reference","message":"stale element reference: stale element not f...
+    │    │             └ <function ErrorHandler.check_response at 0x000001DB2C0427A0>
+    │    └ <selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x000001DB2BA3BF10>
+    └ <selenium.webdriver.chrome.webdriver.WebDriver (session="b8e3809e3bea534b0ae4015122f0b84b")>
+  File "H:\projects\ime_crawl\venv\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+          │               │        │       └ ['\tGetHandleVerifier [0x00007FF7448F38A5+3004357]', '\t(No symbol) [0x00007FF744589970]', '\t(No symbol) [0x00007FF74443582A...
+          │               │        └ None
+          │               └ 'stale element reference: stale element not found in the current frame\n  (Session info: chrome=130.0.6723.119)'
+          └ <class 'selenium.common.exceptions.StaleElementReferenceException'>
+
+selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=130.0.6723.119); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF7448F38A5+3004357]
+	(No symbol) [0x00007FF744589970]
+	(No symbol) [0x00007FF74443582A]
+	(No symbol) [0x00007FF74443C2E2]
+	(No symbol) [0x00007FF74443E637]
+	(No symbol) [0x00007FF74443E6F0]
+	(No symbol) [0x00007FF74447FB2B]
+	(No symbol) [0x00007FF7444ABBDA]
+	(No symbol) [0x00007FF7444792A6]
+	(No symbol) [0x00007FF7444ABDF0]
+	(No symbol) [0x00007FF7444CBA4C]
+	(No symbol) [0x00007FF7444AB983]
+	(No symbol) [0x00007FF744477628]
+	(No symbol) [0x00007FF744478791]
+	GetHandleVerifier [0x00007FF74491A00D+3161901]
+	GetHandleVerifier [0x00007FF74496E060+3506048]
+	GetHandleVerifier [0x00007FF74496400D+3465005]
+	GetHandleVerifier [0x00007FF7446E0EEB+830987]
+	(No symbol) [0x00007FF74459467F]
+	(No symbol) [0x00007FF7445909D4]
+	(No symbol) [0x00007FF744590B6D]
+	(No symbol) [0x00007FF744580149]
+	BaseThreadInitThunk [0x00007FFD11FA257D+29]
+	RtlUserThreadStart [0x00007FFD1340AF08+40]
+
+2024-11-15T13:34:52.448366+0330 __main__ ERROR Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=130.0.6723.119); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF7448F38A5+3004357]
+	(No symbol) [0x00007FF744589970]
+	(No symbol) [0x00007FF74443582A]
+	(No symbol) [0x00007FF74443C2E2]
+	(No symbol) [0x00007FF74443E637]
+	(No symbol) [0x00007FF74443E6F0]
+	(No symbol) [0x00007FF74447FB2B]
+	(No symbol) [0x00007FF7444ABBDA]
+	(No symbol) [0x00007FF7444792A6]
+	(No symbol) [0x00007FF7444ABDF0]
+	(No symbol) [0x00007FF7444CBA4C]
+	(No symbol) [0x00007FF7444AB983]
+	(No symbol) [0x00007FF744477628]
+	(No symbol) [0x00007FF744478791]
+	GetHandleVerifier [0x00007FF74491A00D+3161901]
+	GetHandleVerifier [0x00007FF74496E060+3506048]
+	GetHandleVerifier [0x00007FF74496400D+3465005]
+	GetHandleVerifier [0x00007FF7446E0EEB+830987]
+	(No symbol) [0x00007FF74459467F]
+	(No symbol) [0x00007FF7445909D4]
+	(No symbol) [0x00007FF744590B6D]
+	(No symbol) [0x00007FF744580149]
+	BaseThreadInitThunk [0x00007FFD11FA257D+29]
+	RtlUserThreadStart [0x00007FFD1340AF08+40]
+
+Traceback (most recent call last):
+
+> File "H:\projects\ime_crawl\main.py", line 187, in <module>
+    scrape.start()
+    │      └ <function Scrape.start at 0x0000022FAB0C7420>
+    └ <__main__.Scrape object at 0x0000022FAB0EACD0>
+
+  File "H:\projects\ime_crawl\main.py", line 58, in start
+    self.scrape_full()
+    │    └ <function Scrape.scrape_full at 0x0000022FAB0C7560>
+    └ <__main__.Scrape object at 0x0000022FAB0EACD0>
+
+  File "H:\projects\ime_crawl\main.py", line 132, in scrape_full
+    if e.text == self.selected_export_mode:
+       │ │       │    └ 'MS-Excel'
+       │ │       └ <__main__.Scrape object at 0x0000022FAB0EACD0>
+       │ └ <property object at 0x0000022FAAC76A20>
+       └ <selenium.webdriver.remote.webelement.WebElement (session="66a4038e01752e606792252157273973", element="f.DF64938160361DF046BA...
+
+  File "H:\projects\ime_crawl\venv\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 90, in text
+    return self._execute(Command.GET_ELEMENT_TEXT)["value"]
+           │    │        │       └ 'getElementText'
+           │    │        └ <class 'selenium.webdriver.remote.command.Command'>
+           │    └ <function WebElement._execute at 0x0000022FAAC67D80>
+           └ <selenium.webdriver.remote.webelement.WebElement (session="66a4038e01752e606792252157273973", element="f.DF64938160361DF046BA...
+  File "H:\projects\ime_crawl\venv\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 395, in _execute
+    return self._parent.execute(command, params)
+           │    │       │       │        └ {'id': 'f.DF64938160361DF046BA259882CA92CF.d.31C2A3B31F0B675F17342F0DF1335E0E.e.371'}
+           │    │       │       └ 'getElementText'
+           │    │       └ <function WebDriver.execute at 0x0000022FAACF9120>
+           │    └ <selenium.webdriver.chrome.webdriver.WebDriver (session="66a4038e01752e606792252157273973")>
+           └ <selenium.webdriver.remote.webelement.WebElement (session="66a4038e01752e606792252157273973", element="f.DF64938160361DF046BA...
+  File "H:\projects\ime_crawl\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 380, in execute
+    self.error_handler.check_response(response)
+    │    │             │              └ {'status': 404, 'value': '{"value":{"error":"stale element reference","message":"stale element reference: stale element not f...
+    │    │             └ <function ErrorHandler.check_response at 0x0000022FAAB727A0>
+    │    └ <selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x0000022FAAD37B90>
+    └ <selenium.webdriver.chrome.webdriver.WebDriver (session="66a4038e01752e606792252157273973")>
+  File "H:\projects\ime_crawl\venv\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+          │               │        │       └ ['\tGetHandleVerifier [0x00007FF7448F38A5+3004357]', '\t(No symbol) [0x00007FF744589970]', '\t(No symbol) [0x00007FF74443582A...
+          │               │        └ None
+          │               └ 'stale element reference: stale element not found in the current frame\n  (Session info: chrome=130.0.6723.119)'
+          └ <class 'selenium.common.exceptions.StaleElementReferenceException'>
+
+selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=130.0.6723.119); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF7448F38A5+3004357]
+	(No symbol) [0x00007FF744589970]
+	(No symbol) [0x00007FF74443582A]
+	(No symbol) [0x00007FF74443C2E2]
+	(No symbol) [0x00007FF74443E637]
+	(No symbol) [0x00007FF74443E6F0]
+	(No symbol) [0x00007FF74447FB2B]
+	(No symbol) [0x00007FF7444ABBDA]
+	(No symbol) [0x00007FF7444792A6]
+	(No symbol) [0x00007FF7444ABDF0]
+	(No symbol) [0x00007FF7444CBA4C]
+	(No symbol) [0x00007FF7444AB983]
+	(No symbol) [0x00007FF744477628]
+	(No symbol) [0x00007FF744478791]
+	GetHandleVerifier [0x00007FF74491A00D+3161901]
+	GetHandleVerifier [0x00007FF74496E060+3506048]
+	GetHandleVerifier [0x00007FF74496400D+3465005]
+	GetHandleVerifier [0x00007FF7446E0EEB+830987]
+	(No symbol) [0x00007FF74459467F]
+	(No symbol) [0x00007FF7445909D4]
+	(No symbol) [0x00007FF744590B6D]
+	(No symbol) [0x00007FF744580149]
+	BaseThreadInitThunk [0x00007FFD11FA257D+29]
+	RtlUserThreadStart [0x00007FFD1340AF08+40]
+
+2024-11-15T13:40:04.250167+0330 __main__ ERROR Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=130.0.6723.119); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF7448F38A5+3004357]
+	(No symbol) [0x00007FF744589970]
+	(No symbol) [0x00007FF74443582A]
+	(No symbol) [0x00007FF74443C2E2]
+	(No symbol) [0x00007FF74443E637]
+	(No symbol) [0x00007FF74443E6F0]
+	(No symbol) [0x00007FF74447FB2B]
+	(No symbol) [0x00007FF7444ABBDA]
+	(No symbol) [0x00007FF7444792A6]
+	(No symbol) [0x00007FF7444ABDF0]
+	(No symbol) [0x00007FF7444CBA4C]
+	(No symbol) [0x00007FF7444AB983]
+	(No symbol) [0x00007FF744477628]
+	(No symbol) [0x00007FF744478791]
+	GetHandleVerifier [0x00007FF74491A00D+3161901]
+	GetHandleVerifier [0x00007FF74496E060+3506048]
+	GetHandleVerifier [0x00007FF74496400D+3465005]
+	GetHandleVerifier [0x00007FF7446E0EEB+830987]
+	(No symbol) [0x00007FF74459467F]
+	(No symbol) [0x00007FF7445909D4]
+	(No symbol) [0x00007FF744590B6D]
+	(No symbol) [0x00007FF744580149]
+	BaseThreadInitThunk [0x00007FFD11FA257D+29]
+	RtlUserThreadStart [0x00007FFD1340AF08+40]
+
+Traceback (most recent call last):
+
+> File "H:\projects\ime_crawl\main.py", line 187, in <module>
+    scrape.start()
+    │      └ <function Scrape.start at 0x00000224935C7420>
+    └ <__main__.Scrape object at 0x00000224935EACD0>
+
+  File "H:\projects\ime_crawl\main.py", line 58, in start
+    self.scrape_full()
+    │    └ <function Scrape.scrape_full at 0x00000224935C7560>
+    └ <__main__.Scrape object at 0x00000224935EACD0>
+
+  File "H:\projects\ime_crawl\main.py", line 132, in scrape_full
+    if e.text == self.selected_export_mode:
+       │ │       │    └ 'MS-Excel'
+       │ │       └ <__main__.Scrape object at 0x00000224935EACD0>
+       │ └ <property object at 0x0000022492946A20>
+       └ <selenium.webdriver.remote.webelement.WebElement (session="e59decf4c8c3d1c7dbfb44b16cbf5c6d", element="f.3639CEF46BF0034B50E5...
+
+  File "H:\projects\ime_crawl\venv\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 90, in text
+    return self._execute(Command.GET_ELEMENT_TEXT)["value"]
+           │    │        │       └ 'getElementText'
+           │    │        └ <class 'selenium.webdriver.remote.command.Command'>
+           │    └ <function WebElement._execute at 0x0000022492937D80>
+           └ <selenium.webdriver.remote.webelement.WebElement (session="e59decf4c8c3d1c7dbfb44b16cbf5c6d", element="f.3639CEF46BF0034B50E5...
+  File "H:\projects\ime_crawl\venv\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 395, in _execute
+    return self._parent.execute(command, params)
+           │    │       │       │        └ {'id': 'f.3639CEF46BF0034B50E5460563E0CED7.d.61CC8E916DD46B322FD38413EE702026.e.339'}
+           │    │       │       └ 'getElementText'
+           │    │       └ <function WebDriver.execute at 0x00000224929C9120>
+           │    └ <selenium.webdriver.chrome.webdriver.WebDriver (session="e59decf4c8c3d1c7dbfb44b16cbf5c6d")>
+           └ <selenium.webdriver.remote.webelement.WebElement (session="e59decf4c8c3d1c7dbfb44b16cbf5c6d", element="f.3639CEF46BF0034B50E5...
+  File "H:\projects\ime_crawl\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 380, in execute
+    self.error_handler.check_response(response)
+    │    │             │              └ {'status': 404, 'value': '{"value":{"error":"stale element reference","message":"stale element reference: stale element not f...
+    │    │             └ <function ErrorHandler.check_response at 0x00000224928427A0>
+    │    └ <selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x0000022492A17B90>
+    └ <selenium.webdriver.chrome.webdriver.WebDriver (session="e59decf4c8c3d1c7dbfb44b16cbf5c6d")>
+  File "H:\projects\ime_crawl\venv\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+          │               │        │       └ ['\tGetHandleVerifier [0x00007FF7448F38A5+3004357]', '\t(No symbol) [0x00007FF744589970]', '\t(No symbol) [0x00007FF74443582A...
+          │               │        └ None
+          │               └ 'stale element reference: stale element not found in the current frame\n  (Session info: chrome=130.0.6723.119)'
+          └ <class 'selenium.common.exceptions.StaleElementReferenceException'>
+
+selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=130.0.6723.119); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF7448F38A5+3004357]
+	(No symbol) [0x00007FF744589970]
+	(No symbol) [0x00007FF74443582A]
+	(No symbol) [0x00007FF74443C2E2]
+	(No symbol) [0x00007FF74443E637]
+	(No symbol) [0x00007FF74443E6F0]
+	(No symbol) [0x00007FF74447FB2B]
+	(No symbol) [0x00007FF7444ABBDA]
+	(No symbol) [0x00007FF7444792A6]
+	(No symbol) [0x00007FF7444ABDF0]
+	(No symbol) [0x00007FF7444CBA4C]
+	(No symbol) [0x00007FF7444AB983]
+	(No symbol) [0x00007FF744477628]
+	(No symbol) [0x00007FF744478791]
+	GetHandleVerifier [0x00007FF74491A00D+3161901]
+	GetHandleVerifier [0x00007FF74496E060+3506048]
+	GetHandleVerifier [0x00007FF74496400D+3465005]
+	GetHandleVerifier [0x00007FF7446E0EEB+830987]
+	(No symbol) [0x00007FF74459467F]
+	(No symbol) [0x00007FF7445909D4]
+	(No symbol) [0x00007FF744590B6D]
+	(No symbol) [0x00007FF744580149]
+	BaseThreadInitThunk [0x00007FFD11FA257D+29]
+	RtlUserThreadStart [0x00007FFD1340AF08+40]
+
+2024-11-15T13:41:23.355872+0330 __main__ ERROR Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=130.0.6723.119); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF7448F38A5+3004357]
+	(No symbol) [0x00007FF744589970]
+	(No symbol) [0x00007FF74443582A]
+	(No symbol) [0x00007FF74443C2E2]
+	(No symbol) [0x00007FF74443E637]
+	(No symbol) [0x00007FF74443E6F0]
+	(No symbol) [0x00007FF74447FB2B]
+	(No symbol) [0x00007FF7444ABBDA]
+	(No symbol) [0x00007FF7444792A6]
+	(No symbol) [0x00007FF7444ABDF0]
+	(No symbol) [0x00007FF7444CBA4C]
+	(No symbol) [0x00007FF7444AB983]
+	(No symbol) [0x00007FF744477628]
+	(No symbol) [0x00007FF744478791]
+	GetHandleVerifier [0x00007FF74491A00D+3161901]
+	GetHandleVerifier [0x00007FF74496E060+3506048]
+	GetHandleVerifier [0x00007FF74496400D+3465005]
+	GetHandleVerifier [0x00007FF7446E0EEB+830987]
+	(No symbol) [0x00007FF74459467F]
+	(No symbol) [0x00007FF7445909D4]
+	(No symbol) [0x00007FF744590B6D]
+	(No symbol) [0x00007FF744580149]
+	BaseThreadInitThunk [0x00007FFD11FA257D+29]
+	RtlUserThreadStart [0x00007FFD1340AF08+40]
+
+Traceback (most recent call last):
+
+> File "H:\projects\ime_crawl\main.py", line 187, in <module>
+    scrape.start()
+    │      └ <function Scrape.start at 0x00000180888D7420>
+    └ <__main__.Scrape object at 0x00000180888FAD10>
+
+  File "H:\projects\ime_crawl\main.py", line 58, in start
+    self.scrape_full()
+    │    └ <function Scrape.scrape_full at 0x00000180888D7560>
+    └ <__main__.Scrape object at 0x00000180888FAD10>
+
+  File "H:\projects\ime_crawl\main.py", line 132, in scrape_full
+    if e.text == self.selected_export_mode:
+       │ │       │    └ 'MS-Excel'
+       │ │       └ <__main__.Scrape object at 0x00000180888FAD10>
+       │ └ <property object at 0x0000018088456A20>
+       └ <selenium.webdriver.remote.webelement.WebElement (session="d5eb94f08187332eb2f5cd3811bc7be7", element="f.9514D43160D405BCE7A2...
+
+  File "H:\projects\ime_crawl\venv\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 90, in text
+    return self._execute(Command.GET_ELEMENT_TEXT)["value"]
+           │    │        │       └ 'getElementText'
+           │    │        └ <class 'selenium.webdriver.remote.command.Command'>
+           │    └ <function WebElement._execute at 0x0000018088447D80>
+           └ <selenium.webdriver.remote.webelement.WebElement (session="d5eb94f08187332eb2f5cd3811bc7be7", element="f.9514D43160D405BCE7A2...
+  File "H:\projects\ime_crawl\venv\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 395, in _execute
+    return self._parent.execute(command, params)
+           │    │       │       │        └ {'id': 'f.9514D43160D405BCE7A257B1EC95874E.d.88811B61B3434C1680AD374FCEE93691.e.447'}
+           │    │       │       └ 'getElementText'
+           │    │       └ <function WebDriver.execute at 0x00000180884D9120>
+           │    └ <selenium.webdriver.chrome.webdriver.WebDriver (session="d5eb94f08187332eb2f5cd3811bc7be7")>
+           └ <selenium.webdriver.remote.webelement.WebElement (session="d5eb94f08187332eb2f5cd3811bc7be7", element="f.9514D43160D405BCE7A2...
+  File "H:\projects\ime_crawl\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 380, in execute
+    self.error_handler.check_response(response)
+    │    │             │              └ {'status': 404, 'value': '{"value":{"error":"stale element reference","message":"stale element reference: stale element not f...
+    │    │             └ <function ErrorHandler.check_response at 0x00000180883527A0>
+    │    └ <selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x00000180882E8910>
+    └ <selenium.webdriver.chrome.webdriver.WebDriver (session="d5eb94f08187332eb2f5cd3811bc7be7")>
+  File "H:\projects\ime_crawl\venv\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+          │               │        │       └ ['\tGetHandleVerifier [0x00007FF7448F38A5+3004357]', '\t(No symbol) [0x00007FF744589970]', '\t(No symbol) [0x00007FF74443582A...
+          │               │        └ None
+          │               └ 'stale element reference: stale element not found in the current frame\n  (Session info: chrome=130.0.6723.119)'
+          └ <class 'selenium.common.exceptions.StaleElementReferenceException'>
+
+selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=130.0.6723.119); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF7448F38A5+3004357]
+	(No symbol) [0x00007FF744589970]
+	(No symbol) [0x00007FF74443582A]
+	(No symbol) [0x00007FF74443C2E2]
+	(No symbol) [0x00007FF74443E637]
+	(No symbol) [0x00007FF74443E6F0]
+	(No symbol) [0x00007FF74447FB2B]
+	(No symbol) [0x00007FF7444ABBDA]
+	(No symbol) [0x00007FF7444792A6]
+	(No symbol) [0x00007FF7444ABDF0]
+	(No symbol) [0x00007FF7444CBA4C]
+	(No symbol) [0x00007FF7444AB983]
+	(No symbol) [0x00007FF744477628]
+	(No symbol) [0x00007FF744478791]
+	GetHandleVerifier [0x00007FF74491A00D+3161901]
+	GetHandleVerifier [0x00007FF74496E060+3506048]
+	GetHandleVerifier [0x00007FF74496400D+3465005]
+	GetHandleVerifier [0x00007FF7446E0EEB+830987]
+	(No symbol) [0x00007FF74459467F]
+	(No symbol) [0x00007FF7445909D4]
+	(No symbol) [0x00007FF744590B6D]
+	(No symbol) [0x00007FF744580149]
+	BaseThreadInitThunk [0x00007FFD11FA257D+29]
+	RtlUserThreadStart [0x00007FFD1340AF08+40]
+
+2024-11-15T13:46:29.861167+0330 __main__ ERROR Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=130.0.6723.119); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF7448F38A5+3004357]
+	(No symbol) [0x00007FF744589970]
+	(No symbol) [0x00007FF74443582A]
+	(No symbol) [0x00007FF74443C2E2]
+	(No symbol) [0x00007FF74443E637]
+	(No symbol) [0x00007FF74443E6F0]
+	(No symbol) [0x00007FF74447FB2B]
+	(No symbol) [0x00007FF7444ABBDA]
+	(No symbol) [0x00007FF7444792A6]
+	(No symbol) [0x00007FF7444ABDF0]
+	(No symbol) [0x00007FF7444CBA4C]
+	(No symbol) [0x00007FF7444AB983]
+	(No symbol) [0x00007FF744477628]
+	(No symbol) [0x00007FF744478791]
+	GetHandleVerifier [0x00007FF74491A00D+3161901]
+	GetHandleVerifier [0x00007FF74496E060+3506048]
+	GetHandleVerifier [0x00007FF74496400D+3465005]
+	GetHandleVerifier [0x00007FF7446E0EEB+830987]
+	(No symbol) [0x00007FF74459467F]
+	(No symbol) [0x00007FF7445909D4]
+	(No symbol) [0x00007FF744590B6D]
+	(No symbol) [0x00007FF744580149]
+	BaseThreadInitThunk [0x00007FFD11FA257D+29]
+	RtlUserThreadStart [0x00007FFD1340AF08+40]
+
+Traceback (most recent call last):
+
+> File "H:\projects\ime_crawl\main.py", line 190, in <module>
+    scrape.start()
+    │      └ <function Scrape.start at 0x00000208900A7420>
+    └ <__main__.Scrape object at 0x00000208900CAF10>
+
+  File "H:\projects\ime_crawl\main.py", line 58, in start
+    self.scrape_full()
+    │    └ <function Scrape.scrape_full at 0x00000208900A7560>
+    └ <__main__.Scrape object at 0x00000208900CAF10>
+
+  File "H:\projects\ime_crawl\main.py", line 134, in scrape_full
+    if e.text == self.selected_export_mode:
+       │ │       │    └ 'MS-Excel'
+       │ │       └ <__main__.Scrape object at 0x00000208900CAF10>
+       │ └ <property object at 0x000002088FC62750>
+       └ <selenium.webdriver.remote.webelement.WebElement (session="4462149723a5c643841a292e13d3c870", element="f.327FB9F0A5CF0C3F1477...
+
+  File "H:\projects\ime_crawl\venv\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 90, in text
+    return self._execute(Command.GET_ELEMENT_TEXT)["value"]
+           │    │        │       └ 'getElementText'
+           │    │        └ <class 'selenium.webdriver.remote.command.Command'>
+           │    └ <function WebElement._execute at 0x000002088FC57D80>
+           └ <selenium.webdriver.remote.webelement.WebElement (session="4462149723a5c643841a292e13d3c870", element="f.327FB9F0A5CF0C3F1477...
+  File "H:\projects\ime_crawl\venv\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 395, in _execute
+    return self._parent.execute(command, params)
+           │    │       │       │        └ {'id': 'f.327FB9F0A5CF0C3F147769C34AADEB5D.d.18D6E205B3FD106D662E9E439941896D.e.340'}
+           │    │       │       └ 'getElementText'
+           │    │       └ <function WebDriver.execute at 0x000002088FCE9120>
+           │    └ <selenium.webdriver.chrome.webdriver.WebDriver (session="4462149723a5c643841a292e13d3c870")>
+           └ <selenium.webdriver.remote.webelement.WebElement (session="4462149723a5c643841a292e13d3c870", element="f.327FB9F0A5CF0C3F1477...
+  File "H:\projects\ime_crawl\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 380, in execute
+    self.error_handler.check_response(response)
+    │    │             │              └ {'status': 404, 'value': '{"value":{"error":"stale element reference","message":"stale element reference: stale element not f...
+    │    │             └ <function ErrorHandler.check_response at 0x000002088FB627A0>
+    │    └ <selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x000002088FB08A10>
+    └ <selenium.webdriver.chrome.webdriver.WebDriver (session="4462149723a5c643841a292e13d3c870")>
+  File "H:\projects\ime_crawl\venv\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+          │               │        │       └ ['\tGetHandleVerifier [0x00007FF7448F38A5+3004357]', '\t(No symbol) [0x00007FF744589970]', '\t(No symbol) [0x00007FF74443582A...
+          │               │        └ None
+          │               └ 'stale element reference: stale element not found in the current frame\n  (Session info: chrome=130.0.6723.119)'
+          └ <class 'selenium.common.exceptions.StaleElementReferenceException'>
+
+selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=130.0.6723.119); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF7448F38A5+3004357]
+	(No symbol) [0x00007FF744589970]
+	(No symbol) [0x00007FF74443582A]
+	(No symbol) [0x00007FF74443C2E2]
+	(No symbol) [0x00007FF74443E637]
+	(No symbol) [0x00007FF74443E6F0]
+	(No symbol) [0x00007FF74447FB2B]
+	(No symbol) [0x00007FF7444ABBDA]
+	(No symbol) [0x00007FF7444792A6]
+	(No symbol) [0x00007FF7444ABDF0]
+	(No symbol) [0x00007FF7444CBA4C]
+	(No symbol) [0x00007FF7444AB983]
+	(No symbol) [0x00007FF744477628]
+	(No symbol) [0x00007FF744478791]
+	GetHandleVerifier [0x00007FF74491A00D+3161901]
+	GetHandleVerifier [0x00007FF74496E060+3506048]
+	GetHandleVerifier [0x00007FF74496400D+3465005]
+	GetHandleVerifier [0x00007FF7446E0EEB+830987]
+	(No symbol) [0x00007FF74459467F]
+	(No symbol) [0x00007FF7445909D4]
+	(No symbol) [0x00007FF744590B6D]
+	(No symbol) [0x00007FF744580149]
+	BaseThreadInitThunk [0x00007FFD11FA257D+29]
+	RtlUserThreadStart [0x00007FFD1340AF08+40]
+
+2024-11-15T13:53:03.035314+0330 __main__ ERROR Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=130.0.6723.119); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF7448F38A5+3004357]
+	(No symbol) [0x00007FF744589970]
+	(No symbol) [0x00007FF74443582A]
+	(No symbol) [0x00007FF74443C2E2]
+	(No symbol) [0x00007FF74443E637]
+	(No symbol) [0x00007FF74443E6F0]
+	(No symbol) [0x00007FF74448563A]
+	(No symbol) [0x00007FF744485E7C]
+	(No symbol) [0x00007FF7444793DC]
+	(No symbol) [0x00007FF7444ABC1F]
+	(No symbol) [0x00007FF7444792A6]
+	(No symbol) [0x00007FF7444ABDF0]
+	(No symbol) [0x00007FF7444CBA4C]
+	(No symbol) [0x00007FF7444AB983]
+	(No symbol) [0x00007FF744477628]
+	(No symbol) [0x00007FF744478791]
+	GetHandleVerifier [0x00007FF74491A00D+3161901]
+	GetHandleVerifier [0x00007FF74496E060+3506048]
+	GetHandleVerifier [0x00007FF74496400D+3465005]
+	GetHandleVerifier [0x00007FF7446E0EEB+830987]
+	(No symbol) [0x00007FF74459467F]
+	(No symbol) [0x00007FF7445909D4]
+	(No symbol) [0x00007FF744590B6D]
+	(No symbol) [0x00007FF744580149]
+	BaseThreadInitThunk [0x00007FFD11FA257D+29]
+	RtlUserThreadStart [0x00007FFD1340AF08+40]
+
+Traceback (most recent call last):
+
+> File "H:\projects\ime_crawl\main.py", line 198, in <module>
+    scrape.start()
+    │      └ <function Scrape.start at 0x000001CC17A5B4C0>
+    └ <__main__.Scrape object at 0x000001CC16BCDE10>
+
+  File "H:\projects\ime_crawl\main.py", line 58, in start
+    self.scrape_full()
+    │    └ <function Scrape.scrape_full at 0x000001CC17A5B600>
+    └ <__main__.Scrape object at 0x000001CC16BCDE10>
+
+  File "H:\projects\ime_crawl\main.py", line 131, in scrape_full
+    self.export_list.find_element(By.TAG_NAME, 'button').click()
+    │    │           │            │  └ 'tag name'
+    │    │           │            └ <class 'selenium.webdriver.common.by.By'>
+    │    │           └ <function WebElement.find_element at 0x000001CC16DC3EC0>
+    │    └ <selenium.webdriver.remote.webelement.WebElement (session="a69225834083dfbdb62c6170e84405cd", element="f.D0A995819B595C5C4B43...
+    └ <__main__.Scrape object at 0x000001CC16BCDE10>
+
+  File "H:\projects\ime_crawl\venv\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 408, in find_element
+    return self._execute(Command.FIND_CHILD_ELEMENT, {"using": by, "value": value})["value"]
+           │    │        │       │                             │            └ 'button'
+           │    │        │       │                             └ 'tag name'
+           │    │        │       └ 'findChildElement'
+           │    │        └ <class 'selenium.webdriver.remote.command.Command'>
+           │    └ <function WebElement._execute at 0x000001CC16DC3E20>
+           └ <selenium.webdriver.remote.webelement.WebElement (session="a69225834083dfbdb62c6170e84405cd", element="f.D0A995819B595C5C4B43...
+  File "H:\projects\ime_crawl\venv\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 395, in _execute
+    return self._parent.execute(command, params)
+           │    │       │       │        └ {'using': 'tag name', 'value': 'button', 'id': 'f.D0A995819B595C5C4B43CD371A627CA8.d.6FB57D8B6590102E31ED4F6148C8DD43.e.339'}
+           │    │       │       └ 'findChildElement'
+           │    │       └ <function WebDriver.execute at 0x000001CC16E591C0>
+           │    └ <selenium.webdriver.chrome.webdriver.WebDriver (session="a69225834083dfbdb62c6170e84405cd")>
+           └ <selenium.webdriver.remote.webelement.WebElement (session="a69225834083dfbdb62c6170e84405cd", element="f.D0A995819B595C5C4B43...
+  File "H:\projects\ime_crawl\venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 380, in execute
+    self.error_handler.check_response(response)
+    │    │             │              └ {'status': 404, 'value': '{"value":{"error":"stale element reference","message":"stale element reference: stale element not f...
+    │    │             └ <function ErrorHandler.check_response at 0x000001CC16CD2840>
+    │    └ <selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x000001CC1479B450>
+    └ <selenium.webdriver.chrome.webdriver.WebDriver (session="a69225834083dfbdb62c6170e84405cd")>
+  File "H:\projects\ime_crawl\venv\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+          │               │        │       └ ['\tGetHandleVerifier [0x00007FF7448F38A5+3004357]', '\t(No symbol) [0x00007FF744589970]', '\t(No symbol) [0x00007FF74443582A...
+          │               │        └ None
+          │               └ 'stale element reference: stale element not found in the current frame\n  (Session info: chrome=130.0.6723.119)'
+          └ <class 'selenium.common.exceptions.StaleElementReferenceException'>
+
+selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=130.0.6723.119); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF7448F38A5+3004357]
+	(No symbol) [0x00007FF744589970]
+	(No symbol) [0x00007FF74443582A]
+	(No symbol) [0x00007FF74443C2E2]
+	(No symbol) [0x00007FF74443E637]
+	(No symbol) [0x00007FF74443E6F0]
+	(No symbol) [0x00007FF74448563A]
+	(No symbol) [0x00007FF744485E7C]
+	(No symbol) [0x00007FF7444793DC]
+	(No symbol) [0x00007FF7444ABC1F]
+	(No symbol) [0x00007FF7444792A6]
+	(No symbol) [0x00007FF7444ABDF0]
+	(No symbol) [0x00007FF7444CBA4C]
+	(No symbol) [0x00007FF7444AB983]
+	(No symbol) [0x00007FF744477628]
+	(No symbol) [0x00007FF744478791]
+	GetHandleVerifier [0x00007FF74491A00D+3161901]
+	GetHandleVerifier [0x00007FF74496E060+3506048]
+	GetHandleVerifier [0x00007FF74496400D+3465005]
+	GetHandleVerifier [0x00007FF7446E0EEB+830987]
+	(No symbol) [0x00007FF74459467F]
+	(No symbol) [0x00007FF7445909D4]
+	(No symbol) [0x00007FF744590B6D]
+	(No symbol) [0x00007FF744580149]
+	BaseThreadInitThunk [0x00007FFD11FA257D+29]
+	RtlUserThreadStart [0x00007FFD1340AF08+40]
+
+2024-11-15T14:24:36.264855+0330 __main__ ERROR sleep length must be non-negative
+Traceback (most recent call last):
+
+> File "H:\projects\ime_crawl\main.py", line 198, in <module>
+    scrape.start()
+    │      └ <function Scrape.start at 0x000001A5A9C87560>
+    └ <__main__.Scrape object at 0x000001A5A9CAB050>
+
+  File "H:\projects\ime_crawl\main.py", line 58, in start
+    self.scrape_full()
+    │    └ <function Scrape.scrape_full at 0x000001A5A9C876A0>
+    └ <__main__.Scrape object at 0x000001A5A9CAB050>
+
+  File "H:\projects\ime_crawl\main.py", line 124, in scrape_full
+    sleep(time_to_wait)
+    │     └ -10
+    └ <built-in function sleep>
+
+ValueError: sleep length must be non-negative

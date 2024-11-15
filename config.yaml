@@ -1,9 +1,9 @@
 export_method: MS-Excel
 first_time_read:
-  from_date: 1403/01/01
-  state: active
-  step_days: 10
-  to_date: 1403/03/31
+  from_date: 1403/08/25
+  state: inactive
+  step_days: 3
+  to_date: 1403/08/25
 last_read_date: 1403/08/25
 output_path: c:\test
 show_browser: false
